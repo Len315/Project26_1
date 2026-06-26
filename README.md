@@ -1,31 +1,58 @@
 # Project26_1
-Koodin perus käyttö ohjeet ja vaihtoehdot
+
+This project implements a simple Unix utility for reversing the order of lines in a file.
+
+## Build
+```bash
+make
+```
+
+# reverse.c
+
+Description:
+Prints the contents of one or more text files in reverse order to standard output.
 
 Case 1, no arguments:
-  $ ./reverse
+```bash
+./reverse
   one
   two
   three
-  (EOF or ctrl+D)
-Result: prints 
+```
+Result:
+```
   three
   two
   one
-to stdout
+```
 
-Case 2, one argument:
-  $ ./reverse input.txt
-Result: prints the input.txt lines in reverse order to stdout
+Case 2, one input file:
+```bash
+./reverse input.txt
+```
+Result:
+```
+third line
+second line
+first line
+```
 
-Case 3, two arguments:
-  $ ./reverse input.txt output.txt
-Result: prints the input.txt lines in reverse order to output.txt
+Case 3, two input files:
+```bash
+./reverse input.txt output.txt
+```
+Result:
+Reads input.txt and writes the reversed lines to output.txt
 
-2. Esimerkki käytöstä
-$ make
-$ ./reverse 8.in.txt
-$ ./test-wish.sh
+Example:
+```bash
+make
+./reverse tests/8.in
+./test-reverse.sh
+```
 
-4. Edge cases / error handling
-run existing tests with command ./test-wish.sh
-not capable for other errors
+### Edge cases / Error handling
+Run the provided test suite:
+```bash
+./test-reverse.sh
+```
